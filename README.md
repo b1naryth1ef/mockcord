@@ -1,5 +1,6 @@
 # Mockcord
 
+Mockcord is a simple backend mock server for the [Discord API](https://dis.gd/docs). Mockcord was built to help library and bot developers build integration testing suites. Mockcord is currently heavily WIP.
 
 ## TODO
 
