@@ -12,6 +12,7 @@ import vibe.http.router : URLRouter;
 import mockcord.state : State;
 import mockcord.server : Server;
 import mockcord.api.routes.user : UserRoutes;
+import mockcord.api.routes.guild: GuildRoutes;
 
 class APIServer : Server {
   URLRouter router;
@@ -21,6 +22,7 @@ class APIServer : Server {
     this.state = state;
     this.router = new URLRouter;
     this.addRoutes!UserRoutes;
+    this.addRoutes!GuildRoutes;
     writefln("%s", this.router.getAllRoutes());
   }
 
