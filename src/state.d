@@ -61,6 +61,8 @@ class State {
   /// Random Users
   UserMap users;
 
+  GuildMap guilds;
+
   this() {
     this.users = new UserMap;
     this.guilds = new GuildMap;
@@ -96,13 +98,13 @@ class State {
       this.guilds[gid].name = format("Discord %s", gid);
       this.guilds[gid].icon = null;
       this.guilds[gid].splash = null;
-      this.guilds[gid].owner_id = RANDOM_USER_IDS[idx];
+      this.guilds[gid].ownerID = RANDOM_USER_IDS[idx];
       this.guilds[gid].region = REGIONS[idx];
-      this.guilds[gid].afk_channel_id = RANDOM_VOICE_CHANNEL_IDS[idx];
-      this.guilds[gid].afk_timeout = idx + 100;
-      this.guilds[gid].embed_enabled = even;
-      this.guilds[gid].embed_channel_id = even ? RANDOM_TEXT_CHANNEL_IDS[idx] : null;
-      this.guilds[gid].verification_level = 1;
+      this.guilds[gid].afkChannelID = RANDOM_VOICE_CHANNEL_IDS[idx];
+      this.guilds[gid].afkTimeout = (cast(int)idx + 1) * 100;
+      this.guilds[gid].embedEnabled = even;
+      this.guilds[gid].embedChannelID = RANDOM_TEXT_CHANNEL_IDS[idx];
+      this.guilds[gid].verificationLevel = 1;
       this.guilds[gid].features = [];
       this.guilds[gid].unavailable = false;
     }
