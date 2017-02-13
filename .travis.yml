@@ -9,6 +9,9 @@ before_install:
   - sudo dpkg -i *.deb
   - dub upgrade
 
+before_deploy:
+  - mv mockcord mockcord-linux-x64
+
 script: dub build --compiler=${DC}
 
 d:
@@ -20,7 +23,8 @@ deploy:
   provider: releases
   api_key:
     secure: Cmoha/2Wwiupfoiv4agVq/Llrye2i0LnWYacCOwdB6aZD8G5pSGKHhtj5YtBo8goVCHIs75lZJefGFrzQqO2Cza77uNTDk1/2wa8tUNnFMsLiEMxU3ofdDhvGby1b1o0osi6UhQM00nm9tm0bKvwIqTjonR/JjQYcdMj6Fpf2mJgBicyFmDVSd0s4lh9iFzlwtHHAU/rCeOBEmnLxtV9yf9Rd2Jr/bEWZ/tZolP1B/ivX9JKeBlsoj7Kj7zqjPxkcqVjDfd442a5v9kW1IiJmNUI/9Gkt6lFJQC10bga+ZuddoK+q9ddD3iLj5q70ISwPMLpNuLljSgI4LlrjjtR9l3wSDzGGSxcwzm5hgMzeatLsLHgHSCbabvx1Nnc29b77N//ZuFzUTXB2OkdnBUvYBA8EfA7G2Eyn4UqLzsirpOvin0fswcwC0+UF37W0IMnVwfHom1ep5a1vuljQZrOisZwpkg5RULcJ3Qh6fnmoZzrY4pLIr1xR6luBOc0AaC+PEMYMLXxekwjnmYZJkTjHKE/dapAvqYLNaJokqy4m2C+UMgkp98WeP/Izg74bPffyY3Y6Q94tOQ1VmTvMKRsRPry4h7Qn+ja++mTj3eZyCRBiH+7NMCwbzSWDDHyzLaP+NGAd5vn6f+OXqTGqUOUdURhB7qlR1m7VrzumutU1s0=
-  file: mockcord
+  file: mockcord-linux-x64
   on:
     tags: true
     repo: b1naryth1ef/mockcord
+    d: dmd
