@@ -1,0 +1,26 @@
+language: d
+
+before_install:
+  - sudo apt-get update -qq
+  - wget http://ftp.us.debian.org/debian/pool/main/o/opus/libopus0_1.1-2_amd64.deb
+  - wget http://ftp.us.debian.org/debian/pool/main/o/opus/libopus-dev_1.1-2_amd64.deb
+  - wget http://ftp.us.debian.org/debian/pool/main/libs/libsodium/libsodium18_1.0.11-1_amd64.deb
+  - wget http://ftp.us.debian.org/debian/pool/main/libs/libsodium/libsodium-dev_1.0.11-1_amd64.deb
+  - sudo dpkg -i *.deb
+  - dub upgrade
+
+script: dub build --compiler=${DC}
+
+d:
+  - dmd
+  - dmd-2.072.2
+  - dmd-2.071.2
+
+deploy:
+  provider: releases
+  api_key:
+    secure: KM/pZizbTFEsWpjN/NblRMMRILwPaM6omXfDwsdhT+nqHmPo5fboCVWhZbmq3kDKrf0PC4GhZdanGoBAWVg1Ftd9Vd7QFdXhuHCv3/olsUK/Vot2DzMCdAj4Pw3K2o2xc3A+1cjFva01GfpoTjV0LtG8OgtFhsb++EJW4o/sT1nB+Kl8KNR2UpunFog5h/yziO7/H8FytpF1E5M7PA9f7MiTKOtWriVFgCBVxWVGYnYFk5HQjBqoSF5s9D6V62hAOam5gLuBorRZmHhvDs64T4EsQUAaKBVXnwmFdf+O9Py15IYDj+Zl3WO53UjrIGYE5sD/Hf2a8TwXr42agrnA1xn0yVfIWleawr0fHDKMWkATf3HiBOLCuw204w1k8ED7Tub+koXSJgW8az1zLa297Oyzic0um0hKCMKNWu2S+6UzsF+8TmB60/aGGuUDdUOarGuiBM1/76bqUQwP7ri36JsBcdMNkZskIJjQw0TeThcXqqLOHQ4GE5sk3T3Y8D+Uq4MUU8TCErY9QKCn0gyWByojIuFdTwSd1ZC9bmf9hFB7+hF49BThsjZOtUeseA6SCajdCjegGbh97ZV7L5TmVCfCaF2O78J1qlXX0DdI1ZFRQ9VHIBaWnB2sJ4xyw1/6aF7PFnmvgCEfmAc4k1nfrVpHjvu15ZbB2tZqCjn/w3M=
+  file: mockcord
+  on:
+    tags: true
+    repo: b1naryth1ef/mockcord
