@@ -5,7 +5,7 @@
   "homepage": "http://github.com/b1naryth1ef/mockcord",
   "license": "zlib",
   "dependencies": {
-    "dscord": {"path": "../dscord/"}
+    "dscord": "~master" 
   },
   "configurations": [
     {
