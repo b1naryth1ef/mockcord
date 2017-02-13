@@ -12,7 +12,7 @@ before_install:
 before_deploy:
   - mv mockcord mockcord-linux-x64
 
-script: dub build --compiler=${DC}
+script: dub build --compiler=${DC} --build=release
 
 d:
   - dmd
