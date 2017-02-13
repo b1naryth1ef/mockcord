@@ -1,0 +1,16 @@
+.dub/
+*.a
+docs.json
+docs/
+__test*
+*.html
+dub.selections.json
+mockcord
+
+# Windows/VisualD
+*.visualdproj
+*.lib
+*.sln
+*.suo
+*.dll
+*.exe

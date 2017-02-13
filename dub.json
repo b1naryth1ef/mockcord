@@ -1,0 +1,30 @@
+{
+  "name": "mockcord",
+  "description": "a mock discord backend for integration testing",
+  "authors": ["Andrei Zbikowski"],
+  "homepage": "http://github.com/b1naryth1ef/mockcord",
+  "license": "zlib",
+  "dependencies": {
+    "dscord": {"path": "../dscord/"}
+  },
+  "configurations": [
+    {
+      "name": "mockcord-linux",
+      "targetType": "executable",
+      "platforms": ["linux"],
+      "versions": []
+    },
+    {
+      "name": "mockcord-osx",
+      "targetType": "executable",
+      "lflags": ["-L/usr/local/opt/openssl/lib"],
+      "platforms": ["OSX"]
+    },
+    {
+      "name": "mockcord-windows",
+      "targetType": "executable",
+      "platforms": ["Windows"]
+    }
+  ],
+  "-ddoxFilterArgs": ["--no-unittest-examples"]
+}
