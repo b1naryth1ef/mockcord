@@ -9,15 +9,24 @@
   },
   "configurations": [
     {
-      "name": "mockcord-linux",
+      "name": "mockcord-linux-static-x64",
+      "targetType": "executable",
+      "platforms": ["linux", "X86_64"],
+      "subConfigurations": {
+        "dscord": "dscord-linux-static-x64"
+      }
+    },
+    {
+      "name": "mockcord-linux-dynamic",
       "targetType": "executable",
       "platforms": ["linux"],
-      "versions": []
+      "subConfigurations": {
+        "dscord": "dscord-linux-dynamic"
+      }
     },
     {
       "name": "mockcord-osx",
       "targetType": "executable",
-      "lflags": ["-L/usr/local/opt/openssl/lib"],
       "platforms": ["OSX"]
     },
     {

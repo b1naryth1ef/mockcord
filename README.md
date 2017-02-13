@@ -3,6 +3,8 @@
 
 ## TODO
 
+### Mocking
+
 - [ ] REST API
   - [ ] Authentication
   - [ ] Channels
@@ -18,3 +20,8 @@
     - [ ] Resuming
     - [ ] Events
 - [ ] Voice API
+
+### Infra
+
+- [ ] Travis Builds
+  - [ ] Simple static binary
