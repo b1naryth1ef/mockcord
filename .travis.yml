@@ -27,4 +27,3 @@ deploy:
   on:
     tags: true
     repo: b1naryth1ef/mockcord
-    d: dmd
